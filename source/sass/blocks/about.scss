@@ -1,0 +1,87 @@
+.about {
+  position: relative;
+  min-height: 320px;
+  padding: 60px 0 100px 250px;
+
+  @include vp-1023 {
+    padding-top: 40px;
+    padding-bottom: 80px;
+  }
+
+  @include vp-767 {
+    padding-top: 25px;
+    padding-left: 0;
+  }
+}
+
+.about__year {
+  position: absolute;
+  top: 60px;
+  left: -250px;
+  display: block;
+  max-width: 320px;
+  max-height: 150px;
+  overflow: hidden;
+
+  font-family: $ff-roboto-condensed;
+  font-size: 156px;
+  line-height: 156px;
+  font-weight: 700;
+  color: transparent;
+
+  background-color: $color-deep-sky-blue;
+  background-image: url("../../img/bg-year.jpg");
+  background-clip: text;
+  transform: translateX(50%) translateY(50%) rotate(-90deg);
+
+  @include retina {
+    background-image: url("../../img/bg-year@2x.jpg");
+  }
+
+  @include vp-767 {
+    display: none;
+  }
+}
+
+.about h2 {
+  margin: 0;
+  margin-bottom: 15px;
+
+  font-family: $ff-roboto-condensed;
+  font-size: 36px;
+  line-height: 1.4;
+  font-weight: 400;
+
+  @include vp-767 {
+    font-style: 28px;
+  }
+}
+
+.about p {
+  margin: 0;
+  margin-bottom: 20px;
+
+  line-height: 22px;
+
+  @include vp-767 {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}
+
+.about__button {
+  min-width: 155px;
+  padding: 15px;
+
+  color: $color-deep-sky-blue;
+
+  border: 1px solid;
+}
+
+[data-button-to-collapse].is-hidden {
+  display: none;
+}
+
+[data-text-collapsible].is-hidden {
+  display: none;
+}

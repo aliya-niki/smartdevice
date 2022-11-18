@@ -1,0 +1,23 @@
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 0;
+  list-style-type: none;
+}
+
+.socials__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+
+  @include hover-focus {
+    opacity: 0.8;
+  }
+}
+
+.socials__icon {
+  fill: $color-alice-blue;
+}

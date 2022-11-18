@@ -1,0 +1,56 @@
+.advantages-card {
+  padding: 40px 42px 65px 45px;
+
+  border-left: 5px solid $color-deep-sky-blue;
+
+  @include hover {
+    background-color: $color-deep-sky-blue;
+
+    svg {
+      fill: $color-basic-white;
+    }
+
+    h3,
+    p {
+      color: $color-basic-white;
+    }
+  }
+
+  @include vp-1023 {
+    padding: 40px 40px 30px 30px;
+  }
+
+  @include vp-767 {
+    padding: 30px 30px 35px;
+  }
+}
+
+.advantages-card svg {
+  margin-bottom: 20px;
+
+  fill: $color-deep-sky-blue;
+}
+
+.advantages-card h3 {
+  margin: 0;
+  margin-bottom: 15px;
+
+  font-family: $ff-roboto-condensed;
+  font-size: 24px;
+  line-height: 35px;
+  font-weight: 400;
+  color: $color-deep-sky-blue;
+
+  @include vp-767 {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+}
+
+.advantages-card p {
+  margin: 0;
+
+  @include vp-767 {
+    font-size: 14px;
+  }
+}

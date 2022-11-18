@@ -1,0 +1,140 @@
+.services-card {
+  position: relative;
+  display: flex;
+  min-height: 650px;
+  padding: 50px 80px 80px 40px;
+
+  color: $color-default-white;
+
+  background-color: $color-cerulean-blue;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  user-select: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(4, 24, 39, 50%);
+  }
+
+  @include hover-focus {
+    opacity: 0.8;
+  }
+
+  @media (min-width: $vp-1024) {
+    background-image: url("../../img/bg-card-center-desktop.jpg");
+
+    &--first {
+      background-image: url("../../img/bg-card-left-desktop.jpg");
+    }
+
+    &--second {
+      background-image: url("../../img/bg-card-center-desktop.jpg");
+    }
+
+    &--third {
+      background-image: url("../../img/bg-card-right-desktop.jpg");
+    }
+
+    @include retina {
+      background-image: url("../../img/bg-card-center-desktop@2x.jpg");
+
+      &--first {
+        background-image: url("../../img/bg-card-left-desktop@2x.jpg");
+      }
+
+      &--second {
+        background-image: url("../../img/bg-card-center-desktop@2x.jpg");
+      }
+
+      &--third {
+        background-image: url("../../img/bg-card-right-desktop@2x.jpg");
+      }
+    }
+  }
+
+  @include vp-1023 {
+    min-height: 250px;
+    padding-top: 50px;
+
+    background-image: url("../../img/bg-card-down-tablet.jpg");
+
+    &--first {
+      background-image: url("../../img/bg-card-top-tablet.jpg");
+    }
+
+    &--second {
+      background-image: url("../../img/bg-card-center-tablet.jpg");
+    }
+
+    &--third {
+      background-image: url("../../img/bg-card-down-tablet.jpg");
+    }
+
+    @include retina {
+      background-image: url("../../img/bg-card-down-tablet@2x.jpg");
+
+      &--first {
+        background-image: url("../../img/bg-card-top-tablet@2x.jpg");
+      }
+
+      &--second {
+        background-image: url("../../img/bg-card-center-tablet@2x.jpg");
+      }
+
+      &--third {
+        background-image: url("../../img/bg-card-down-tablet@2x.jpg");
+      }
+    }
+  }
+
+  @include vp-767 {
+    padding: 30px 40px 60px 30px;
+  }
+}
+
+.services-card h3 {
+  z-index: 2;
+  margin: 0;
+
+  font-family: $ff-roboto-condensed;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  color: $color-default-white;
+
+  @include vp-767 {
+    font-size: 18px;
+  }
+}
+
+.services-card div {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  right: 0;
+
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+
+  background-color: $color-deep-sky-blue;
+  border-radius: 3px;
+
+  @include vp-767 {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.services-card svg {
+  fill: transparent;
+  stroke: $color-default-white;
+}

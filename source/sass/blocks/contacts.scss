@@ -1,0 +1,42 @@
+.contacts__title {
+  margin: 0;
+  margin-bottom: 20px;
+
+  font-family: $ff-roboto-condensed;
+  font-size: 15px;
+  line-height: 1.07;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $color-default-white;
+}
+
+.contacts__list {
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
+}
+
+.contacts__item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.contacts__address {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.contacts__address,
+.contacts__phone {
+  font-style: normal;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.contacts__phone {
+  user-select: none;
+
+  @include hover-focus {
+    opacity: 0.8;
+  }
+}

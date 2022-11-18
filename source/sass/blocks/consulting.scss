@@ -1,0 +1,66 @@
+.consulting {
+  position: relative;
+
+  background-color: $color-deep-sky-blue;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 50%;
+    height: 100%;
+
+    background-color: $color-cerulean-blue;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+  }
+
+  @include vp-1023 {
+    &::before {
+      content: none;
+    }
+  }
+}
+
+.consulting__inner {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  &::before {
+    content: "";
+    position: relative;
+    width: 46%;
+    height: 285px;
+
+    background-image: url("../../img/bg-airplane.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left top;
+
+    @include retina {
+      background-image: url("../../img/bg-airplane@2x.png");
+    }
+  }
+
+  @include vp-1023 {
+    &::before {
+      content: none;
+    }
+  }
+}
+
+.consulting__form {
+  margin-left: auto;
+  margin-right: 10px;
+
+  @include vp-1023 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

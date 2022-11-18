@@ -1,9 +1,91 @@
 import {iosVhFix} from './utils/ios-vh-fix';
 import {initModals} from './modules/modals/init-modals';
 
+const PHONE_NUMBER_LENGTH = 11;
+
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
+  // Скрывает кнопку при выключенном JS
+  const modalOpenButton = document.querySelector('[data-open-modal]');
+  if (modalOpenButton) {
+    modalOpenButton.classList.remove('is-hidden');
+  }
+
+  // Accordion
+  const accordionHeaders = document.querySelectorAll('[data-accordion-header]');
+
+  for (let element of accordionHeaders) {
+    element.classList.remove('is-open');
+
+    element.addEventListener('click', function (evt) {
+      const accordion = evt.target.closest('[data-accordion-header]');
+      if (!accordion.classList.contains('is-open')) {
+        accordionHeaders.forEach((item) => item.classList.remove('is-open'));
+      }
+      accordion.classList.toggle('is-open');
+    });
+  }
+
+  // Phone input mask + validation
+  const phoneInputs = document.querySelectorAll('[data-phone-input]');
+
+  const prefixNumber = (str) => {
+    if (str === '7') {
+      return '7 (';
+    }
+    if (str === '8') {
+      return '7 (';
+    }
+    return '7 (' + str;
+  };
+
+  for (let input of phoneInputs) {
+    input.addEventListener('input', () => {
+      const value = input.value.replace(/\D+/g, '');
+      const numberLength = PHONE_NUMBER_LENGTH;
+
+      let result = '+';
+
+      for (let i = 0; i < value.length && i < numberLength; i++) {
+        switch (i) {
+          case 0:
+            result += prefixNumber(value[i]);
+            continue;
+          case 4:
+            result += ') ';
+            break;
+          case 7:
+            result += '-';
+            break;
+          case 9:
+            result += '-';
+            break;
+          default:
+            break;
+        }
+        result += value[i];
+      }
+
+      input.value = result;
+    });
+  }
+
+  // Collapse/Expand text element
+  const buttonToCollapse = document.querySelector('[data-button-to-collapse]');
+  const textCollapsible = document.querySelector('[data-text-collapsible]');
+  buttonToCollapse.classList.remove('is-hidden');
+  textCollapsible.classList.add('is-hidden');
+  buttonToCollapse.addEventListener('click', () => {
+    if (textCollapsible.classList.contains('is-hidden')) {
+      textCollapsible.classList.remove('is-hidden');
+      buttonToCollapse.textContent = 'Скрыть';
+      return;
+    }
+    textCollapsible.classList.add('is-hidden');
+    buttonToCollapse.textContent = 'Показать';
+  });
+
 
   // Utils
   // ---------------------------------

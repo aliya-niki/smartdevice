@@ -1,63 +1,311 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Описание проекта">
-    <title>ProjectName</title>
+    <title>Smart Device</title>
     <link rel="stylesheet" href="css/style.min.css">
+    <link rel="preload" href="fonts/ptmono-regular.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/robotocondensed-regular.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/robotocondensed-bold.woff2" type="font/woff2" as="font" crossorigin="anonymous">
   </head>
   <body>
     <div class="wrapper">
-      <header>
-        <div class="container"></div>
+      <header class="header">
+        <div class="container">
+          <nav class="main-nav">
+            <a class="main-nav__logo logo logo--header">
+              <picture>
+                <source media="(min-width: 768px)" srcset="img/logo-desktop.svg">
+                <img src="img/logo-mobile.svg" width="35" height="35" alt="Логотип компании SmartDevice.">
+              </picture>
+            </a>
+            <ul class="main-nav__list">
+              <li class="main-nav__item">
+                <a class="main-nav__link" href="mailto:info@sd.ru">
+                  <svg class="main-nav__icon" width="21" height="21">
+                    <use href="img/sprite_auto.svg#email"></use>
+                  </svg>
+                  <span class="main-nav__text">info@sd.ru</span>
+                </a>
+              </li>
+              <li class="main-nav__item">
+                <a class="main-nav__link" href="tel:+74950005252">
+                  <svg class="main-nav__icon" width="21" height="21">
+                    <use href="img/sprite_auto.svg#phone-call"></use>
+                  </svg>
+                  <span class="main-nav__text">+7&nbsp;(495)&nbsp;000&nbsp;52&nbsp;52</span>
+                </a>
+              </li>
+            </ul>
+            <a class="main-nav__button btn is-hidden" href="#" data-open-modal="feedback">Заказать звонок</a>
+          </nav>
+        </div>
       </header>
       <main>
+        <h1 class="visually-hidden">Компания SmartDevice.</h1>
         <section class="intro">
           <div class="container">
-            <h1>Тестовая страница.</h1>
-            <p>На данной странице показан пример модальных окон.</p>
-            <p>Перед началом разработки не забудьте удалить всё содержимое &#8249;main&#8250;&#8249;&#8260;main&#8250;.</p>
-            <p><a class="btn" href="#" data-open-modal="feedback">modal--feedback link</a></p>
-            <p><a class="btn" href="#" data-open-modal="success">modal--success link</a></p>
+            <div class="intro__inner">
+              <h2>Печатные платы</h2>
+              <p>производство и&nbsp;монтаж, поставка комплектующих, блоков и&nbsp;модулей</p>
+              <a class="intro__button btn" href="#consulting">
+                <span class="intro__button-text intro__button-text--desktop">Получить бесплатную консультацию</span>
+                <span class="intro__button-text intro__button-text--mobile">Бесплатная консультация</span>
+              </a>
+            </div>
+          </div>
+        </section>
+        <section class="advantages">
+          <div class="container">
+            <h2 class="visually-hidden">Наши преимущества.</h2>
+            <ul class="advantages__list">
+              <li class="advantages__item">
+                <section class="advantages-card">
+                  <svg width="35" height="35">
+                    <use href="img/sprite_auto.svg#deadline"></use>
+                  </svg>
+                  <h3>Оперативные сроки</h3>
+                  <p>Усовершенствованная логистическая система позволяет нам просчитывать стоимость, производить
+                    и&nbsp;доставлять заказы плат и&nbsp;комплектующих в&nbsp;самые короткие сроки.</p>
+                </section>
+              </li>
+              <li class="advantages__item">
+                <section class="advantages-card">
+                  <svg width="35" height="35">
+                    <use href="img/sprite_auto.svg#providers"></use>
+                  </svg>
+                  <h3>Крупные поставщики</h3>
+                  <p>Нашими поставщиками являются такие крупные мировые компании как: OSRAM, CREE, HOLGLITRONIC, REFOND.
+                    Сотрудничество с&nbsp;такими компаниями обеспечивает хорошее качество нашей продукции.</p>
+                </section>
+              </li>
+              <li class="advantages__item">
+                <section class="advantages-card">
+                  <svg width="35" height="35">
+                    <use href="img/sprite_auto.svg#confidentiality"></use>
+                  </svg>
+                  <h3>Полная конфиденциальность</h3>
+                  <p>По&nbsp;желанию клиента мы&nbsp;обеспечиваем полную конфиденциальность.</p>
+                </section>
+              </li>
+              <li class="advantages__item">
+                <section class="advantages-card">
+                  <svg width="35" height="35">
+                    <use href="img/sprite_auto.svg#tag"></use>
+                  </svg>
+                  <h3>Персонализация стоимости</h3>
+                  <p>Мы&nbsp;подбираем определенную фабрику, поставщиков, вид доставки, чтобы установить ту&nbsp;цену,
+                    которая Вас устраивает.</p>
+                </section>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <div class="container">
+          <article class="about">
+            <span class="about__year">2022</span>
+            <h2>О компании</h2>
+            <p>Мы&nbsp;поставляем электронные комплектующие, производим печатные платы и&nbsp;предоставляем мировые технологии с&nbsp;1997&nbsp;года.
+              Выполняем срочные заказы и&nbsp;пилотные образцы до&nbsp;10&nbsp;дней.</p>
+            <p>Наши поставщики&nbsp;&mdash; мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND.
+              Печатные платы и&nbsp;комплектующие Service Devices применяются на&nbsp;предприятиях Российских Железных Дорог (РЖД),
+              РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.</p>
+            <div data-text-collapsible>
+              <p>Smart Device&nbsp;&mdash; это команда профессионалов. Через нас прошло более 1&nbsp;000&nbsp;000&nbsp;клиентов, 70% из&nbsp;которых продолжают сотрудничество по&nbsp;сей день.
+                На&nbsp;данный момент насчитывается более 14&nbsp;офисов по&nbsp;всей стране и&nbsp;20&nbsp;городов присутствия.</p>
+              <p>Мы&nbsp;стремимся к&nbsp;постоянному развитию и&nbsp;повышению уровня качества продукции, производимой внутри компании.
+                Использование инновационных технологий помогает экономить деньги и&nbsp;время наших клиентов.</p>
+            </div>
+            <button class="about__button btn is-hidden" data-button-to-collapse>Подробнее</button>
+          </article>
+        </div>
+        <section class="services">
+          <div class="container">
+            <div class="services__inner">
+              <h2 class="services__title">
+                <span class="services__title-text services__title-text--desktop">Smart Device предлагает следующие товары и услуги</span>
+                <span class="services__title-text services__title-text--mobile">Товары и&nbsp;услуги Smart Device</span>
+              </h2>
+              <ul class="services__list">
+                <li class="services__item">
+                  <a class="services-card services-card--first" href="#">
+                    <h3>Производство печатных&nbsp;плат</h3>
+                    <div>
+                      <svg width="5" height="10">
+                        <use href="img/sprite_auto.svg#icon-arrow-right"></use>
+                      </svg>
+                      <span class="visually-hidden">Перейти на страницу услуги.</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="services__item">
+                  <a class="services-card services-card--second" href="#">
+                    <h3>Монтаж печатных плат</h3>
+                    <div>
+                      <svg width="5" height="10">
+                        <use href="img/sprite_auto.svg#icon-arrow-right"></use>
+                      </svg>
+                      <span class="visually-hidden">Перейти на страницу услуги.</span>
+                    </div>
+                  </a>
+                </li>
+                <li class="services__item">
+                  <a class="services-card services-card--third" href="#">
+                    <h3>Комплектующие для&nbsp;светотехники</h3>
+                    <div>
+                      <svg width="5" height="10">
+                        <use href="img/sprite_auto.svg#icon-arrow-right"></use>
+                      </svg>
+                      <span class="visually-hidden">Перейти на страницу услуги.</span>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section class="consulting" id="consulting">
+          <div class="container">
+            <div class="consulting__inner">
+              <h2 class="visually-hidden">Форма для вопросов.</h2>
+              <form class="consulting__form form form--consulting" action="https://echo.htmlacademy.ru/courses" method="post">
+                <h3>Остались вопросы? Задайте&nbsp;их&nbsp;нам!</h3>
+                <p>Мы проконсультируем Вас бесплатно</p>
+                <div>
+                  <label for="name">
+                    <span class="visually-hidden">Ваше имя.</span>
+                    <input id="name" type="text" name="name" placeholder="Имя" minlength="1" pattern="[a-zA-Zа-яА-Я]+\s*"
+                      title="Вы можете ввести только буквы и пробел"
+                      required data-name-input>
+                  </label>
+                  <label for="phone-number">
+                    <span class="visually-hidden">Ваш номер телефона.</span>
+                    <input id="phone-number" name="phone-number" placeholder="Телефон" type="tel"
+                      data-phone-input required>
+                  </label>
+                  <label for="question">
+                    <span class="visually-hidden">Ваш вопрос.</span>
+                    <textarea id="question" name="question" rows="5" placeholder="Ваш вопрос"></textarea>
+                  </label>
+                  <button type="submit">Задать вопрос</button>
+                  <label for="consent">
+                    <input id="consent" type="checkbox" name="consent" value="agree"
+                    data-consent-input checked required>
+                    <span></span>
+                    <span>Я&nbsp;согласен на&nbsp;обработку персональных данных</span>
+                  </label>
+                </div>
+              </form>
+            </div>
           </div>
         </section>
       </main>
-      <footer>
-        <div class="container"></div>
+      <footer class="footer">
+        <div class="footer__inner container">
+          <div class="footer__logo-socials">
+            <a class="footer__logo logo" href="index.html">
+              <img src="img/logo-desktop.svg" width="215" height="55" alt="Логотип компании SmartDevice.">
+            </a>
+            <ul class="footer__socials socials">
+              <li class="socials__item">
+                <a class="socials__link" href="https://vk.com/htmlacademy">
+                  <svg class="socials__icon" width="30" height="30">
+                    <use href="img/sprite_auto.svg#socials-icon-odnoklassniki"></use>
+                  </svg>
+                  <span class="visually-hidden">Наша страница в Одноклассники.</span>
+                </a>
+              </li>
+              <li class="socials__item">
+                <a class="socials__link" href="https://vk.com/htmlacademy">
+                  <svg class="socials__icon" width="30" height="30">
+                    <use href="img/sprite_auto.svg#socials-icon-vk"></use>
+                  </svg>
+                  <span class="visually-hidden">Наша страница в VKontakte.</span>
+                </a>
+              </li>
+              <li class="socials__item">
+                <a class="socials__link" href="https://vk.com/htmlacademy">
+                  <svg class="socials__icon" width="30" height="30">
+                    <use href="img/sprite_auto.svg#socials-icon-pinterest"></use>
+                  </svg>
+                  <span class="visually-hidden">Наша страница в Pinterest.</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <nav class="footer-nav footer__nav">
+            <h2 class="footer-nav__title is-open" data-accordion-header>
+              Разделы сайта
+              <button data-accordion-button><span class="visually-hidden">Показать/Скрыть меню.</span></button>
+            </h2>
+            <ul class="footer-nav__list" data-accordion-panel>
+              <li class="footer-nav__item"><a class="footer-nav__link" href="#">О Компании</a></li>
+              <li class="footer-nav__item"><a class="footer-nav__link" href="#">Продукты</a></li>
+              <li class="footer-nav__item"><a class="footer-nav__link" href="#">Производство печатных плат</a></li>
+              <li class="footer-nav__item"><a class="footer-nav__link" href="#">Монтаж печатных плат</a></li>
+              <li class="footer-nav__item"><a class="footer-nav__link" href="#">Комплектующие</a></li>
+              <li class="footer-nav__item"><a class="footer-nav__link" href="#">Доставка</a></li>
+              <li class="footer-nav__item"><a class="footer-nav__link" href="#">Контакты</a></li>
+            </ul>
+          </nav>
+          <section class="footer__contacts contacts">
+            <h2 class="contacts__title is-open" data-accordion-header>
+              Наш офис
+              <button data-accordion-button><span class="visually-hidden">Показать/Скрыть меню.</span></button>
+            </h2>
+            <address data-accordion-panel>
+              <p class="contacts__address">г. Мытищи, Олимпийский проспект, д.10</p>
+              <ul class="contacts__list">
+                <li class="contacts__item"><a class="contacts__phone" href="tel:+74955894050">+7&nbsp;(495)&nbsp;589-40-50</a></li>
+                <li class="contacts__item"><a class="contacts__phone" href="tel:+79253895829">+7&nbsp;(925)&nbsp;389-58-29</a></li>
+                <li class="contacts__item"><a class="contacts__phone" href="tel:+79253647813">+7&nbsp;(925)&nbsp;364-78-13</a></li>
+              </ul>
+            </address>
+          </section>
+        </div>
       </footer>
     </div>
-
     <!-- Модалки -->
     <div class="modal modal--preload" data-modal="feedback">
       <div class="modal__wrapper">
         <div class="modal__overlay" data-close-modal></div>
         <div class="modal__content">
-          <p class="modal__description">Обычная модалка</p>
-          <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
+          <h2 class="visually-hidden">Модальное окно с формой для обратной связи.</h2>
+          <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап." data-close-modal>
             <svg width="15" height="15">
               <use xlink:href="img/sprite_auto.svg#icon-close"></use>
             </svg>
           </button>
+          <form class="form form--modal" action="https://echo.htmlacademy.ru/courses" method="post">
+            <h3>Закажите звонок</h3>
+            <p>Оставьте контакты, мы&nbsp;проконсультируем вас бесплатно в&nbsp;удобное время</p>
+            <div>
+              <label for="name-modal">
+                <span class="visually-hidden">Ваше имя.</span>
+                <input id="name-modal" type="text" name="name" placeholder="Имя" required data-focus data-name-input>
+              </label>
+              <label for="phone-number-modal">
+                <span class="visually-hidden">Ваш номер телефона.</span>
+                <input id="phone-number-modal" name="phone-number" placeholder="Телефон" type="tel" required data-phone-input>
+              </label>
+              <label for="question-modal">
+                <span class="visually-hidden">Ваш вопрос.</span>
+                <textarea id="question-modal" name="question" rows="4" placeholder="Ваш вопрос"></textarea>
+              </label>
+              <button type="submit">Отправить</button>
+              <label for="consent-modal">
+                <input id="consent-modal" type="checkbox" name="consent" value="agree" checked required>
+                <span></span>
+                <span>Я&nbsp;согласен на&nbsp;обработку персональных данных</span>
+              </label>
+            </div>
+          </form>
         </div>
       </div>
     </div>
-
-    <div class="modal modal--preload modal--fit-content modal--no-scale" data-modal="success">
-      <div class="modal__wrapper">
-        <div class="modal__overlay" data-close-modal></div>
-        <div class="modal__content">
-          <p class="modal__description">Размер этой модалки зависит от ширины контента,<br> отключена анимация-скейл</p>
-          <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап" data-close-modal>
-            <svg width="15" height="15">
-              <use xlink:href="img/sprite_auto.svg#icon-close"></use>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-
     <script src="js/vendor.min.js"></script>
     <script src="js/main.min.js"></script>
   </body>
