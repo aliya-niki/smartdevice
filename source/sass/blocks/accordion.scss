@@ -1,23 +1,28 @@
 [data-accordion-header] {
   @include vp-767 {
     display: flex;
+    width: 100%;
     justify-content: space-between;
+
+    cursor: pointer;
+
+    &:focus-visible {
+      outline: 1px solid;
+      outline-offset: 5px;
+    }
   }
 }
 
-[data-accordion-header] button {
+[data-accordion-header] span {
   display: none;
 
   @include vp-767 {
     position: relative;
-    display: inline-flex;
+    margin-left: auto;
+    display: none;
     align-items: center;
     width: 15px;
     height: 15px;
-
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
 
     &::before,
     &::after {
@@ -40,7 +45,7 @@
   }
 }
 
-[data-accordion-header].is-open button::after {
+[data-accordion-header].is-open span::after {
   @include vp-767 {
     content: none;
   }

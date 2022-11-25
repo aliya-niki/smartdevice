@@ -17,7 +17,7 @@
 
   @include vp-767 {
     min-height: 70px;
-    padding-top: 15px;
+    padding-top: 12px;
     padding-bottom: 20px;
     padding-right: 10px;
   }
@@ -39,8 +39,11 @@
   list-style-type: none;
 
   @include vp-1023 {
+    align-self: flex-start;
     display: flex;
     justify-content: flex-end;
+    column-gap: 20px;
+    padding-left: 0;
   }
 }
 
@@ -61,6 +64,14 @@
 
   @include hover-focus {
     opacity: 0.8;
+  }
+
+  @include vp-1023 {
+    justify-content: center;
+    min-width: 40px;
+    min-height: 40px;
+    padding-top: 8px;
+    column-gap: 0;
   }
 }
 

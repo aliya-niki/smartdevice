@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   min-height: 650px;
-  padding: 50px 80px 80px 40px;
+  padding: 46px 80px 80px 40px;
 
   color: $color-default-white;
 
@@ -61,7 +61,8 @@
 
   @include vp-1023 {
     min-height: 250px;
-    padding-top: 50px;
+    padding-top: 37px;
+    padding-left: 45px;
 
     background-image: url("../../img/bg-card-down-tablet.jpg");
 
@@ -95,13 +96,14 @@
   }
 
   @include vp-767 {
-    padding: 30px 40px 60px 30px;
+    padding: 26px 40px 60px 30px;
   }
 }
 
 .services-card h3 {
   z-index: 2;
   margin: 0;
+  padding-right: 40px;
 
   font-family: $ff-roboto-condensed;
   font-weight: 400;
@@ -109,7 +111,13 @@
   line-height: 30px;
   color: $color-default-white;
 
+  @include vp-1023 {
+    max-width: 190px;
+  }
+
   @include vp-767 {
+    max-width: 155px;
+
     font-size: 18px;
   }
 }

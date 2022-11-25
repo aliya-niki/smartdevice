@@ -3,44 +3,71 @@
 
   &--consulting {
     max-width: 585px;
-    padding-top: 170px;
+    padding-top: 165px;
     padding-bottom: 250px;
 
     @include vp-1023 {
       max-width: 100%;
       width: 100%;
-      padding-top: 50px;
+      padding-top: 46px;
       padding-bottom: 125px;
     }
 
     @include vp-767 {
-      padding-bottom: 90px;
+      padding-bottom: 87px;
     }
   }
 }
 
 .form h3 {
   margin: 0;
-  margin-bottom: 15px;
+  margin-bottom: 13px;
 
   font-family: $ff-roboto-condensed;
   font-weight: 400;
   font-size: 36px;
   line-height: 51px;
+
+  @include vp-1023 {
+    margin-bottom: 8px;
+  }
+
+  @include vp-767 {
+    font-size: 30px;
+    line-height: 140%;
+  }
 }
 
 .form--modal h3 {
   margin-right: 20px;
+  margin-bottom: 5px;
+
+  font-size: 30px;
+  line-height: 42px;
 }
 
 
 .form p {
   margin: 0;
   margin-bottom: 35px;
+  margin-left: 5px;
+
+  @include vp-1023 {
+    margin-left: 0;
+    margin-bottom: 24px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 34px;
+
+    font-size: 14px;
+    line-height: 134%;
+  }
 }
 
 .form--modal p {
   margin-right: 20px;
+  margin-bottom: 40px;
 
   @include vp-767 {
     margin-right: 0;
@@ -50,12 +77,18 @@
 .form div {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-auto-flow: row;
+  grid-auto-flow: row dense;
   column-gap: 30px;
-  row-gap: 30px;
+  row-gap: 20px;
 }
 
 .form--consulting div {
+  margin-left: 5px;
+
+  @include vp-1023 {
+    margin-left: 0;
+  }
+
   @include vp-767 {
     grid: none;
   }
@@ -90,38 +123,53 @@
     opacity: 0.8;
   }
 
-  &:focus-visible {
-    outline-color: $color-default-white;
-  }
-
   &:disabled {
     opacity: 0.3;
 
     pointer-events: none;
   }
+
+  @include vp-767 {
+    padding-bottom: 16px;
+  }
 }
 
 .form label[for="question"] {
   grid-column: 1/-1;
-  margin-bottom: 15px;
+  margin-bottom: 7px;
+
+  @include vp-1023 {
+    margin-bottom: 8px;
+  }
 
   @include vp-767 {
-    margin-bottom: 10px;
+    margin-bottom: 6px;
   }
 }
 
 .form label[for="question-modal"] {
-  margin-bottom: 5px;
+  margin-bottom: 0;
 }
 
 .form textarea {
   padding-top: 25px;
-  padding-bottom: 25px;
+  padding-bottom: 21px;
+
+  @include vp-1023 {
+    padding-top: 32px;
+    padding-bottom: 15px;
+  }
+
+  @include vp-767 {
+    min-height: 180px;
+    padding-top: 25px;
+  }
 }
 
 .form button {
   display: inline-block;
-  padding: 15px 20px;
+  margin-right: 10px;
+  padding: 15px 20px 11px;
 
   font-family: $ff-roboto-condensed;
   font-weight: 700;
@@ -157,19 +205,45 @@
 
   @include vp-767 {
     max-width: 100%;
+    margin-right: 0;
     margin-bottom: 5px;
   }
 }
 
+.form--modal button {
+  margin-right: 0;
+  margin-top: -2px;
+  padding: 15px 20px;
+}
+
 .form label[for="consent"],
 .form label[for="consent-modal"] {
-  align-self: center;
+  order: 2;
+  align-self: end;
   display: flex;
   column-gap: 10px;
+  margin-left: 10px;
 
   font-size: 14px;
   line-height: 16px;
   opacity: 0.8;
+}
+
+.form label[for="consent"] {
+  @include vp-1023 {
+    margin-left: 0;
+    padding-bottom: 4px;
+  }
+
+  @include vp-767 {
+    margin-left: 5px;
+
+    padding-bottom: 0;
+  }
+}
+
+.form label[for="consent-modal"] {
+  margin-top: -2px;
 }
 
 .form input[type="checkbox"] {
@@ -219,6 +293,10 @@
   border-radius: 2px;
 
   cursor: pointer;
+
+  @include vp-767 {
+    margin-bottom: 3px;
+  }
 }
 
 .form input[type="checkbox"]:checked + span {

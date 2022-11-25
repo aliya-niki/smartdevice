@@ -83,7 +83,7 @@
                 </section>
               </li>
               <li class="advantages__item">
-                <section class="advantages-card">
+                <section class="advantages-card advantages-card--confidentiality">
                   <svg width="35" height="35">
                     <use href="img/sprite_auto.svg#confidentiality"></use>
                   </svg>
@@ -92,7 +92,7 @@
                 </section>
               </li>
               <li class="advantages__item">
-                <section class="advantages-card">
+                <section class="advantages-card advantages-card--tag">
                   <svg width="35" height="35">
                     <use href="img/sprite_auto.svg#tag"></use>
                   </svg>
@@ -110,9 +110,9 @@
             <h2>О компании</h2>
             <p>Мы&nbsp;поставляем электронные комплектующие, производим печатные платы и&nbsp;предоставляем мировые технологии с&nbsp;1997&nbsp;года.
               Выполняем срочные заказы и&nbsp;пилотные образцы до&nbsp;10&nbsp;дней.</p>
-            <p>Наши поставщики&nbsp;&mdash; мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND.
+            <p>Наши поставщики&nbsp;&mdash; мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND.<span class="about__mobile-hidden">
               Печатные платы и&nbsp;комплектующие Service Devices применяются на&nbsp;предприятиях Российских Железных Дорог (РЖД),
-              РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.</p>
+              РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.</span></p>
             <div data-text-collapsible>
               <p>Smart Device&nbsp;&mdash; это команда профессионалов. Через нас прошло более 1&nbsp;000&nbsp;000&nbsp;клиентов, 70% из&nbsp;которых продолжают сотрудничество по&nbsp;сей день.
                 На&nbsp;данный момент насчитывается более 14&nbsp;офисов по&nbsp;всей стране и&nbsp;20&nbsp;городов присутствия.</p>
@@ -127,7 +127,7 @@
             <div class="services__inner">
               <h2 class="services__title">
                 <span class="services__title-text services__title-text--desktop">Smart Device предлагает следующие товары и услуги</span>
-                <span class="services__title-text services__title-text--mobile">Товары и&nbsp;услуги Smart Device</span>
+                <span class="services__title-text services__title-text--mobile">Товары и&nbsp;услуги Smart&nbsp;Device</span>
               </h2>
               <ul class="services__list">
                 <li class="services__item">
@@ -177,26 +177,28 @@
                 <div>
                   <label for="name">
                     <span class="visually-hidden">Ваше имя.</span>
-                    <input id="name" type="text" name="name" placeholder="Имя" minlength="1" pattern="[a-zA-Zа-яА-Я]+\s*"
-                      title="Вы можете ввести только буквы и пробел"
+                    <input id="name" type="text" name="name" placeholder="Имя" minlength="1" pattern="^[a-zA-Zа-яА-ЯЁё\s]+$"
+                      title="Вы можете ввести только буквы. "
                       required data-name-input>
                   </label>
                   <label for="phone-number">
                     <span class="visually-hidden">Ваш номер телефона.</span>
-                    <input id="phone-number" name="phone-number" placeholder="Телефон" type="tel"
-                      data-phone-input required>
+                    <input id="phone-number" type="tel" name="phone-number" placeholder="Телефон"
+                      pattern="\+7(\s+)\([0-9]{3}\)(\s+)[0-9]{3}-[0-9]{2}-[0-9]{2}"
+                      title="Введите десятизначный номер телефона в формате +7 (ххх) ххх-хх-хх. "
+                       minlength="16" required data-phone-input>
                   </label>
                   <label for="question">
                     <span class="visually-hidden">Ваш вопрос.</span>
-                    <textarea id="question" name="question" rows="5" placeholder="Ваш вопрос"></textarea>
+                    <textarea id="question" name="question" rows="6" placeholder="Ваш вопрос"></textarea>
                   </label>
-                  <button type="submit">Задать вопрос</button>
                   <label for="consent">
                     <input id="consent" type="checkbox" name="consent" value="agree"
                     data-consent-input checked required>
                     <span></span>
                     <span>Я&nbsp;согласен на&nbsp;обработку персональных данных</span>
                   </label>
+                  <button type="submit">Задать вопрос</button>
                 </div>
               </form>
             </div>
@@ -237,10 +239,7 @@
             </ul>
           </div>
           <nav class="footer-nav footer__nav">
-            <h2 class="footer-nav__title is-open" data-accordion-header>
-              Разделы сайта
-              <button data-accordion-button><span class="visually-hidden">Показать/Скрыть меню.</span></button>
-            </h2>
+            <button class="footer-nav__title is-open" data-accordion-header>Разделы сайта<span aria-label="Показать/Скрыть меню."></span></button>
             <ul class="footer-nav__list" data-accordion-panel>
               <li class="footer-nav__item"><a class="footer-nav__link" href="#">О Компании</a></li>
               <li class="footer-nav__item"><a class="footer-nav__link" href="#">Продукты</a></li>
@@ -252,10 +251,7 @@
             </ul>
           </nav>
           <section class="footer__contacts contacts">
-            <h2 class="contacts__title is-open" data-accordion-header>
-              Наш офис
-              <button data-accordion-button><span class="visually-hidden">Показать/Скрыть меню.</span></button>
-            </h2>
+            <button class="contacts__title is-open" data-accordion-header>Наш офис<span aria-label="Показать/Скрыть меню."></span></button>
             <address data-accordion-panel>
               <p class="contacts__address">г. Мытищи, Олимпийский проспект, д.10</p>
               <ul class="contacts__list">
@@ -275,7 +271,7 @@
         <div class="modal__content">
           <h2 class="visually-hidden">Модальное окно с формой для обратной связи.</h2>
           <button class="modal__close-btn btn-reset" type="button" aria-label="Закрыть попап." data-close-modal>
-            <svg width="15" height="15">
+            <svg width="20" height="20">
               <use xlink:href="img/sprite_auto.svg#icon-close"></use>
             </svg>
           </button>
@@ -285,22 +281,26 @@
             <div>
               <label for="name-modal">
                 <span class="visually-hidden">Ваше имя.</span>
-                <input id="name-modal" type="text" name="name" placeholder="Имя" required data-focus data-name-input>
+                <input id="name-modal" type="text" name="name" placeholder="Имя" minlength="1" pattern="^[a-zA-Zа-яА-ЯЁё\s]+$"
+                  title="Вы можете ввести только буквы и пробел" required data-focus data-name-input>
               </label>
               <label for="phone-number-modal">
                 <span class="visually-hidden">Ваш номер телефона.</span>
-                <input id="phone-number-modal" name="phone-number" placeholder="Телефон" type="tel" required data-phone-input>
+                <input id="phone-number-modal" type="tel" name="phone-number" placeholder="Телефон" minlength="16"
+                  pattern="\+7(\s+)\([0-9]{3}\)(\s+)[0-9]{3}-[0-9]{2}-[0-9]{2}"
+                  title="Введите десятизначный номер телефона в формате +7 (ххх) ххх-хх-хх. "
+                  required data-phone-input>
               </label>
               <label for="question-modal">
                 <span class="visually-hidden">Ваш вопрос.</span>
-                <textarea id="question-modal" name="question" rows="4" placeholder="Ваш вопрос"></textarea>
+                <textarea id="question-modal" name="question" rows="6" placeholder="Ваш вопрос"></textarea>
               </label>
-              <button type="submit">Отправить</button>
               <label for="consent-modal">
                 <input id="consent-modal" type="checkbox" name="consent" value="agree" checked required>
                 <span></span>
                 <span>Я&nbsp;согласен на&nbsp;обработку персональных данных</span>
               </label>
+              <button type="submit">Отправить</button>
             </div>
           </form>
         </div>

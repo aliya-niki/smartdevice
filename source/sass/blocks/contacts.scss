@@ -1,6 +1,7 @@
 .contacts__title {
   margin: 0;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
+  padding: 0;
 
   font-family: $ff-roboto-condensed;
   font-size: 15px;
@@ -9,6 +10,14 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: $color-default-white;
+
+  border: none;
+  background-color: $color-transparent;
+  cursor: none;
+
+  &:focus-visible {
+    outline: none;
+  }
 }
 
 .contacts__list {
@@ -16,21 +25,34 @@
   padding: 0;
 
   list-style-type: none;
+
+  @include vp-767 {
+    margin-bottom: 19px;
+  }
 }
 
 .contacts__item:not(:last-child) {
-  margin-bottom: 10px;
+  margin-bottom: 9px;
 }
 
 .contacts__address {
   margin: 0;
   margin-bottom: 10px;
+
+  @include vp-767 {
+    margin-top: -5px;
+    margin-bottom: 17px;
+  }
 }
 
 .contacts__address,
 .contacts__phone {
   font-style: normal;
   color: rgba(255, 255, 255, 0.7);
+
+  @include vp-767 {
+    font-size: 14px;
+  }
 }
 
 .contacts__phone {

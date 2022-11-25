@@ -6,7 +6,7 @@ const PHONE_NUMBER_LENGTH = 11;
 // ---------------------------------
 
 window.addEventListener('DOMContentLoaded', () => {
-  // Скрывает кнопку при выключенном JS
+  // Скрывает кнопку открытия модалки при выключенном JS
   const modalOpenButton = document.querySelector('[data-open-modal]');
   if (modalOpenButton) {
     modalOpenButton.classList.remove('is-hidden');
@@ -17,6 +17,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   for (let element of accordionHeaders) {
     element.classList.remove('is-open');
+    element.querySelector('span').style.display = 'flex';
 
     element.addEventListener('click', function (evt) {
       const accordion = evt.target.closest('[data-accordion-header]');
@@ -27,7 +28,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Phone input mask + validation
+  // Phone input mask
   const phoneInputs = document.querySelectorAll('[data-phone-input]');
 
   const prefixNumber = (str) => {
@@ -68,6 +69,32 @@ window.addEventListener('DOMContentLoaded', () => {
       }
 
       input.value = result;
+    });
+  }
+
+  // Form validation
+  const consentInputs = document.querySelectorAll('[data-consent-input]');
+  for (let input of consentInputs) {
+    input.addEventListener('blur', () => {
+      let validityMessage = '';
+
+      if (!input.checked) {
+        validityMessage = 'Для отправки формы необходимо подтвердить свое согласие. ';
+      }
+      input.setCustomValidity(validityMessage);
+      input.reportValidity();
+    });
+  }
+
+  const forms = document.querySelectorAll('form');
+  for (let form of forms) {
+    const consent = form.querySelector('[data-consent-input]');
+    const name = form.querySelector('[data-name-input]');
+    const phone = form.querySelector('[data-phone-input]');
+    form.addEventListener('submit', function (evt) {
+      if (!name.value || !phone.value || !consent.checked) {
+        evt.preventDefault();
+      }
     });
   }
 

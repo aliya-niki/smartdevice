@@ -3,23 +3,23 @@
 }
 
 .services__inner {
-  padding-top: 70px;
+  padding-top: 66px;
   padding-bottom: 140px;
 
   @include vp-1023 {
-    padding-top: 60px;
+    padding-top: 56px;
     padding-bottom: 75px;
   }
 
   @include vp-767 {
-    padding-top: 50px;
+    padding-top: 47px;
     padding-bottom: 85px;
   }
 }
 
 .services__title {
   margin: 0;
-  margin-bottom: 50px;
+  margin-bottom: 54px;
 
   font-family: $ff-roboto-condensed;
   font-weight: 400;
@@ -27,6 +27,17 @@
   line-height: 51px;
 
   color: $color-default-white;
+
+  @include vp-1023 {
+    margin-bottom: 37px;
+  }
+
+  @include vp-767 {
+    margin-bottom: 30px;
+
+    font-size: 28px;
+    line-height: 1.4;
+  }
 }
 
 .services__title-text {
