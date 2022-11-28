@@ -42,4 +42,4 @@ const refresh = (done) => {
 const build = gulp.series(clean, svgo, copy, compileStyles, sprite, js);
 const start = gulp.series(build, syncServer);
 
-export { optimizeImages as imagemin, createWebp as webp, build, start };
+export {optimizeImages as imagemin, createWebp as webp, build, start};

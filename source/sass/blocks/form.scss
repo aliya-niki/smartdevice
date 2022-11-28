@@ -74,7 +74,7 @@
   }
 }
 
-.form div {
+.form__inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-auto-flow: row dense;
@@ -82,7 +82,7 @@
   row-gap: 20px;
 }
 
-.form--consulting div {
+.form--consulting .form__inner {
   margin-left: 5px;
 
   @include vp-1023 {
@@ -94,7 +94,7 @@
   }
 }
 
-.form--modal div {
+.form--modal .form__inner {
   grid: none;
   row-gap: 20px;
 }
