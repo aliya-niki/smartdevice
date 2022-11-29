@@ -31,12 +31,12 @@
   color: $color-transparent;
 
   background-color: $color-deep-sky-blue;
-  background-image: url("../../img/bg-year.jpg");
+  background-image: url("../img/bg-year.jpg");
   background-clip: text;
   transform: translateX(50%) translateY(50%) rotate(-90deg);
 
   @include retina {
-    background-image: url("../../img/bg-year@2x.jpg");
+    background-image: url("../img/bg-year@2x.jpg");
   }
 
   @include vp-1023 {

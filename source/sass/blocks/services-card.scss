@@ -28,33 +28,33 @@
   }
 
   @media (min-width: $vp-1024) {
-    background-image: url("../../img/bg-card-center-desktop.jpg");
+    background-image: url("../img/bg-card-center-desktop.jpg");
 
     &--first {
-      background-image: url("../../img/bg-card-left-desktop.jpg");
+      background-image: url("../img/bg-card-left-desktop.jpg");
     }
 
     &--second {
-      background-image: url("../../img/bg-card-center-desktop.jpg");
+      background-image: url("../img/bg-card-center-desktop.jpg");
     }
 
     &--third {
-      background-image: url("../../img/bg-card-right-desktop.jpg");
+      background-image: url("../img/bg-card-right-desktop.jpg");
     }
 
     @include retina {
-      background-image: url("../../img/bg-card-center-desktop@2x.jpg");
+      background-image: url("../img/bg-card-center-desktop@2x.jpg");
 
       &--first {
-        background-image: url("../../img/bg-card-left-desktop@2x.jpg");
+        background-image: url("../img/bg-card-left-desktop@2x.jpg");
       }
 
       &--second {
-        background-image: url("../../img/bg-card-center-desktop@2x.jpg");
+        background-image: url("../img/bg-card-center-desktop@2x.jpg");
       }
 
       &--third {
-        background-image: url("../../img/bg-card-right-desktop@2x.jpg");
+        background-image: url("../img/bg-card-right-desktop@2x.jpg");
       }
     }
   }
@@ -64,33 +64,33 @@
     padding-top: 37px;
     padding-left: 45px;
 
-    background-image: url("../../img/bg-card-down-tablet.jpg");
+    background-image: url("../img/bg-card-down-tablet.jpg");
 
     &--first {
-      background-image: url("../../img/bg-card-top-tablet.jpg");
+      background-image: url("../img/bg-card-top-tablet.jpg");
     }
 
     &--second {
-      background-image: url("../../img/bg-card-center-tablet.jpg");
+      background-image: url("../img/bg-card-center-tablet.jpg");
     }
 
     &--third {
-      background-image: url("../../img/bg-card-down-tablet.jpg");
+      background-image: url("../img/bg-card-down-tablet.jpg");
     }
 
     @include retina {
-      background-image: url("../../img/bg-card-down-tablet@2x.jpg");
+      background-image: url("../img/bg-card-down-tablet@2x.jpg");
 
       &--first {
-        background-image: url("../../img/bg-card-top-tablet@2x.jpg");
+        background-image: url("../img/bg-card-top-tablet@2x.jpg");
       }
 
       &--second {
-        background-image: url("../../img/bg-card-center-tablet@2x.jpg");
+        background-image: url("../img/bg-card-center-tablet@2x.jpg");
       }
 
       &--third {
-        background-image: url("../../img/bg-card-down-tablet@2x.jpg");
+        background-image: url("../img/bg-card-down-tablet@2x.jpg");
       }
     }
   }

@@ -39,13 +39,13 @@
     width: 46%;
     height: 285px;
 
-    background-image: url("../../img/bg-airplane.png");
+    background-image: url("../img/bg-airplane.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: left top;
 
     @include retina {
-      background-image: url("../../img/bg-airplane@2x.png");
+      background-image: url("../img/bg-airplane@2x.png");
     }
   }
 

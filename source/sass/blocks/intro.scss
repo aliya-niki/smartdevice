@@ -3,14 +3,14 @@
 
   background-color: $color-cerulean-blue;
   background-image: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%),
-    url("../../img/bg-intro.jpg");
+    url("../img/bg-intro.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 
   @include retina {
     background-image: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%),
-      url("../../img/bg-intro@2x.jpg");
+      url("../img/bg-intro@2x.jpg");
   }
 
   @include vp-767 {
