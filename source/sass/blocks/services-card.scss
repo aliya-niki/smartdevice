@@ -103,7 +103,6 @@
 .services-card h3 {
   z-index: 2;
   margin: 0;
-  padding-right: 40px;
 
   font-family: $ff-roboto-condensed;
   font-weight: 400;
@@ -120,6 +119,10 @@
 
     font-size: 18px;
   }
+}
+
+.services-card--second h3 {
+  padding-right: 40px;
 }
 
 .services-card__inner {

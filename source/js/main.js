@@ -106,7 +106,7 @@ window.addEventListener('DOMContentLoaded', () => {
   buttonToCollapse.addEventListener('click', () => {
     if (textCollapsible.classList.contains('is-hidden')) {
       textCollapsible.classList.remove('is-hidden');
-      buttonToCollapse.textContent = 'Скрыть';
+      buttonToCollapse.textContent = 'Свернуть';
       return;
     }
     textCollapsible.classList.add('is-hidden');

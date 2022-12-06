@@ -5,4 +5,8 @@
   width: 100%;
 
   background-image: linear-gradient(180deg, $color-black-pearl 84.9%, $color-black-pearl-opacity 100%);
+
+  @include vp-1023 {
+    position: static;
+  }
 }
